@@ -1,0 +1,183 @@
+* { box-sizing: border-box; }
+
+:root {
+  --dark-color: #19283f;
+  --babyBlue-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  height: 1000px;
+}
+
+/* start framework */
+.main-button {
+  background-color: var(--red-color);
+  color: var(--yellow-color);
+}
+
+.main-section {
+  padding-block: 3em;
+  &.colored-section { background-color: var(--section-color); }
+}
+
+.underlined-text::after {
+  content: '';
+  width: 70%;
+  display: block;
+  height: 2px;
+  background: var(--babyBlue-color);
+  margin: 1em auto 0;
+}
+/* end framework */
+
+/* start header */
+nav.navbar {
+  background-color: var(--dark-color);
+  ul.navbar-nav {
+    li.nav-item {
+      a.nav-link {
+        &.active,
+        &:hover {
+          color: var(--babyBlue-color) !important;
+        }
+      }
+    }
+  }
+  .actions {
+    button.search {
+      border-color: var(--babyBlue-color) !important;
+      svg { 
+        color: var(--babyBlue-color);
+      }
+    }
+  }
+}
+/* end header */
+
+/* start welcoming */
+section.welcoming {
+  background-color: var(--dark-color);
+  height: 70vh;
+}
+/* end welcoming */
+
+/* start about */
+section.feature-section {
+  .feat {
+    .icon-holder {
+      .number {
+        font-size: 11rem;
+        color: var(--section-color);
+      }
+      .icon {
+        color: var(--babyBlue-color);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    h4 { color: var(--yellow-color); }
+  }
+}
+/* end about */
+
+/* start meet the team */
+section.meet-the-team {
+  .header {
+    h4 { color: var(--yellow-color); }
+  }
+  .team {
+    .name {
+      background-color: var(--babyBlue-color);
+    }
+  }
+}
+/* end meet the team */
+
+/* start our work */
+.our-work {
+  .content {
+    .filtration {
+      ul {
+        li {
+          button {
+            outline: none;
+            box-shadow: none;
+            &:not(.active):hover {
+              color: var(--red-color) !important;
+            }
+          }
+        }
+      }
+    }
+    .box {
+      &::before {
+        content: attr(data-bs-target);
+        background: var(--babyBlue-color);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFF;
+        font-size: 32px;
+        text-transform: capitalize;
+        opacity: 0.8;
+        transition: 0.5s;
+        transform: translateX(-100%);
+      }
+      &:hover::before {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+/* end our work */
+
+/* start project section */
+section.start-project {
+  background-color: var(--dark-color);
+}
+/* end project section */
+
+/* start subscribe */
+.subscribe {
+  background-color: var(--yellow-color);
+  input {
+    outline: none;
+    box-shadow: none;
+    &::placeholder { color: #FFF; }
+  }
+  button {
+    color: var(--yellow-color);
+  }
+}
+/* end subscribe */
+
+/* start footer */
+footer {
+  background-color: var(--dark-color);
+  .svg-inline--fa {
+    width: 25px;
+    height: 25px;
+    &.fa-facebook {
+      background-color: #1877f2;
+    }
+    &.fa-twitter {
+      background-color: #1da1f2;
+    }
+    &.fa-linkedin {
+      background-color: #0a66c2;
+    }
+    &.fa-youtube {
+      background-color: #ff0000;
+    }
+  }
+}
+/* end footer */
